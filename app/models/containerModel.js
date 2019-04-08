@@ -1,11 +1,16 @@
+const fs = require('fs');
+
 function Container(connection){
 
-	this._container = new Map();
+	let rawdata = fs.readFileSync('./db/containers.json');
+	this._connection = rawdata
 
 }
 
-Container.prototype.getListContainers = function(){
-	return this._container;
+Container.prototype.getListContainers = function(callback){
+	let containers = JSON.parse(this._connection);  
+	console.log(containers);
+	return containers;
 }
 
 Container.prototype.addBeer = function(beerKey){

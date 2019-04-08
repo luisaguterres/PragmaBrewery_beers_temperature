@@ -1,0 +1,25 @@
+[	{
+		"beer": "IPA",
+		"temp_actual": 5,
+		"tempMin": 5,
+		"tempMax": 6
+	},
+	{
+		"beer": "Lager",
+		"temp_actual": 4,
+		"tempMin": 4,
+		"tempMax": 7
+	},
+	{
+		"beer": "Pilsner",
+		"temp_actual": 4,
+		"tempMin": 4,
+		"tempMax": 6
+	},
+	{
+		"beer": "Pale Ale",
+		"temp_actual": 4,
+		"tempMin": 4,
+		"tempMax": 6
+	}
+]
