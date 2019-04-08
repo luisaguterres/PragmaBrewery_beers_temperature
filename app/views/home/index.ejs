@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="utf-8"/>
+			<title>Beers</title>
+		</head>
+	<body>
+
+		<h1>Beers' Temperature</h1>
+
+		<table>
+			
+			<tr>
+				<td>Beer</td>
+				<td>Actual Temperature</td>
+			</tr>
+			<% for(var i = 0; i < containers.length; i++){ %>
+				<tr>
+					<td><%= containers[i].beer %></td>
+					<td><%= containers[i].temp_actual %></td>
+				</tr>
+			<% } %>
+
+		</table>
+
+	</body>
+</html>
