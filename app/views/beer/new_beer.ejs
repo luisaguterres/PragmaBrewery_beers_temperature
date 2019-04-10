@@ -3,26 +3,49 @@
 		<head>
 			<meta charset="utf-8"/>
 			<title>Beers</title>
+
+			<!-- JQuery -->
+			<script src="js/jquery-2.2.1.js"></script>
+
+			<!-- bootstrap -->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		
+			<!-- incluindo css -->
+			<link href="css/style.css" rel="stylesheet">
+
 		</head>
 	<body>
 
-		<h1>Beers' List</h1>
+		<div class="container">
+	    	<div class="row page_content">
 
-		<h2>New Beer</h2>
+				<h1 class="text_center">Beers' List</h1>
 
-		<form action="/beer/new_beer" method="post">
-			<label>Name:</label>
-			<input type="text" id="name" name="beerType" placeholder="Beer Type"/>
-			<br/>
-			<label>Minimum Temperature:</label>
-			<input type="int" id="tempMin" name="tempMin" placeholder="Minimum Temperature"/>
-			<br/>
-			<label>Maximum Temperature:</label>
-			<input type="int" id="tempMax" name="tempMax" placeholder="Maximum Temperature"/>
-			<br/>
-			<input type="submit" value="Save">
-		</form>
+				<form action="/beers/new_beer" method="POST">
+					<h2 class="text_center">New Beer</h2>
+				<div class="form_content">
+					<div>
+						<label for="beer_name">Name:</label>
+						<input type="text" id="beer_name" name="beer_name" placeholder="Beer Type"/>
+					</div>
+					<div>
+						<label for="temp_min">Minimum Temperature:</label>
+						<input type="int" id="temp_min" name="temp_min" placeholder="Minimum Temperature"/><sup>o</sup>C
+					</div>
+					<div>
+						<label for="temp_max">Maximum Temperature:</label>
+						<input type="int" id="temp_max" name="temp_max" placeholder="Maximum Temperature"/><sup>o</sup>C
+					</div>
 
-		
+					<center>
+						<input type="submit" class="btn btn-default" value="Save">
+					</center>
+				</div>
+				</form>			
+				</div>
+				
+			</div>
+		</div>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 	</body>
 </html>

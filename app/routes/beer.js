@@ -1,11 +1,10 @@
 module.exports = function(application){
 
     application.get('/beers', function(req,res){
+    	application.app.controllers.beer.listBeers(application, req, res);
+    });
 
-        var beerModel = new application.app.models.beerModel;
-
-        beerModel.getListBeers(function(error, result){
-        	res.render("beer/new_beer");
-        });
+    application.post('/beers/new_beer', function(req,res){
+    	application.app.controllers.beer.add_beer(application, req, res);
     });
 }
