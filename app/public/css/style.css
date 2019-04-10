@@ -1,0 +1,155 @@
+body{
+	background-image: url('../images/beer.jpg');
+	background-size: cover;
+}
+
+h3{
+	text-align: center;
+	margin: 10px;
+}
+
+h4{
+	text-align: left;
+	margin-left: 10px;
+}
+
+h5{
+	text-align: left;
+	margin-left: 10px;
+}
+
+form{
+	box-shadow: 1px 1px 2px #C3C3C3;
+	border: 3px solid grey;
+	position: relative;
+	width: 60%;
+	position: relative;
+  	overflow: hidden;
+  	margin: 0 auto 15px;
+  	margin-bottom: 35px;
+}
+
+td {
+  height: 50px;
+  vertical-align: bottom;
+}
+
+label{
+	font-weight: bold;
+}
+
+table {
+	border: 2px;
+	width: 75%;
+	text-align: center;
+	font-size: 17px;
+}
+
+p{
+	font-size: 18px;
+}
+
+div.form_content{
+	margin-left: 20px;
+	margin-bottom: 15px;
+	font-size: 18px;
+}
+
+div.container{
+	background-color: #FFFFFF;
+	align-content: center;
+	margin-top: 25px;
+	box-shadow: 1px 1px 2px #C3C3C3;
+	opacity: 0.7;  	
+  	color: black;
+  	margin-bottom: 20px;
+}
+
+p.db_info{
+	font-size: 14px
+}
+
+.action_buttons{
+	text-align: center;
+	margin-right: 30px;
+	margin-bottom: 30px;
+	padding-top: 15px;
+	width: 100%;
+}
+
+.text_center{
+	text-align: center;
+	padding: 10px;
+}
+
+.remove_container{
+	position: right;
+	padding-right: -10px;
+	vertical-align: right;
+}
+
+.truck_container{
+	border: 3px solid grey;
+	position: relative;
+  	overflow: hidden;
+  	height: 220px;
+  	margin: 0 auto 15px;
+  	margin-bottom: 35px;
+  	color: black;
+}
+
+.navbar{
+	background:#FFF;
+}
+
+.beer_title{
+	font-size: 20px;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
