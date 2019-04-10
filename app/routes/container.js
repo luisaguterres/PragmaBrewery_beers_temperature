@@ -1,11 +1,22 @@
 module.exports = function(application){
 
 	application.get('/', function(req,res){
+    	application.app.controllers.container.listContainers(application, req, res);
+    });
 
-        var containerModel = new application.app.models.containerModel;
+	application.get('/open_truck', function(req, res){
+		application.app.controllers.container.open_truck(application, req, res);
+	});
 
-        containerModel.getListContainers(function(error, result){
-        	res.render("home/index", {containers : result});
-        });
-  });
-}
+	application.get('/add_container', function(req, res){
+		application.app.controllers.container.add_container(application, req, res);
+	});
+
+	application.get('/save_container', function(req, res){
+		application.app.controllers.container.save_container(application, req, res);
+	});
+
+	application.get('/remove_container', function(req, res){
+		application.app.controllers.container.remove_container(application, req, res);
+	});
+}	
