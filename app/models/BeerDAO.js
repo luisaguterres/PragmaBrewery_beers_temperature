@@ -4,13 +4,16 @@ function BeerDAO(connection){
 
 }
 
-// List beers
+/** 
+*Bring the beers list from the database in ascending order by beer name
+**/
 BeerDAO.prototype.getListBeers = function(callback){
 	this._connection.query('SELECT * FROM beers ORDER BY beer_name ASC', callback);
 }
 
-// add a new beer
-
+/** 
+*Insert a new beer in the database
+**/
 BeerDAO.prototype.saveBeer = function(beer, callback){
 	console.log("SAlvar cerveja");
 	this._connection.query('INSERT INTO beers SET ?', beer, callback);

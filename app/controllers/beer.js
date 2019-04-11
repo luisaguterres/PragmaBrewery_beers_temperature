@@ -1,3 +1,6 @@
+/** 
+*List the beers 
+**/
 module.exports.listBeers = function(application, req, res){
 	var connection = application.config.dbConnection();
 	var beerModel = new application.app.models.BeerDAO(connection);
@@ -7,14 +10,15 @@ module.exports.listBeers = function(application, req, res){
 	});
 }
 
+/** 
+*Function to save a new beer 
+**/
 module.exports.add_beer = function(application, req, res){
 	var beer = req.body;
 
-	console.log("Controler >> ",beer);	
-
 	req.assert('beer_name', 'The Name is cannot be empty.').notEmpty();
 	req.assert('temp_min', 'The Minimum Temperature is cannot be empty.').notEmpty();
-	req.assert('temp_max', 'The Maximum Temperature is can not be empty.').notEmpty();
+	req.assert('temp_max', 'The Maximum Temperature is cannot be empty.').notEmpty();
 
 	var error = req.validationErrors();
 

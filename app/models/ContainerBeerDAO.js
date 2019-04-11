@@ -3,7 +3,9 @@ function ContainerBeerDAO(connection){
 	this._connection = connection;
 }
 
-// List the containers
+/** 
+*Bring the list of ocntainers with the beers data  
+**/
 ContainerBeerDAO.prototype.getListContainers = function(callback){
 	this._connection.query('SELECT * FROM containers_beers', callback);
 }
