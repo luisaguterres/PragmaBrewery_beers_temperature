@@ -1,18 +1,15 @@
-
 <!DOCTYPE html>
 	<html>
 		<head>
 			<meta charset="utf-8"/>
 			
 			<title>Beers</title>
-
-			<!-- JQuery -->
+		
 			<script src="js/jquery-2.2.1.js"></script>
 
-			<!-- bootstrap -->
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 		
-			<!-- incluindo css -->
+			<!-- includes css -->
 			<link href="css/style.css" rel="stylesheet">
 
 		</head>
@@ -22,46 +19,132 @@
 	    <div class="container">
 	    	<div class="row">
 
-	    		<h1 class="text_center">Beers' Temperature</h1>
+	    		<h1 class="text_center">Beers Truck</h1>
 
 				<div class="action_buttons">
 					<nav>
-			    		<button type="button">
-			    			<a href="open_truck">Open Truck</a>
+						<!-- button responsable to simulate the trucks door opening -->
+			    		<button type="button" onclick="openTruck()">
+			    			Open Truck
 			    		</button>
+			    		<!-- Add a new container  -->
+			    		<!--
 			    		<button type="button">
 			    			<a href="add_container">Load Truck</a>
 			    		</button>
+			    		
 			    		<button type="button">
 			    			<a href="beers">New Beer</a>
-			    		</button>
+			    		</button>	-->		    		
 			    	</nav>
 			    </div>
-
+ 
+			    <!--list the containers -->
 	    		<% for(var i = 0; i < containers.length; i++) { %>
+		    		
 		    		<div class="col-md-4">
 		    			<div class="truck_container">
+			    			
 			    			<p class="beer_title">
 			    				<%= containers[i].beer_name %>
 			    			</p>
 			    			<p>
-			    				Actual Temperature: <%= containers[i].temp_actual %><sup>o</sup>
+			    				Measured Temperature: <%= containers[i].temp_measured %><sup>o</sup>C
 			    			</p>
-			    			<p>
-			    				Status: 
+			    			<p class="beer_status" id="beer_status">
+			    				Status: <%= containers[i].status %>
 			    			</p>
-			    			<p>
+			    			<p class="db_info">
 			    				Minimum Temperature: <%= containers[i].temp_min %><sup>o</sup>C
 			    			</p>
-			    			<p>
+			    			<p class="db_info">
 			    				Maximum Temperature: <%= containers[i].temp_max %><sup>o</sup>C
 			    			</p>
+
 			    		</div>
 			    	</div>
+
 			    <% } %>
-	    	</div>	    	
+
+
+			    <script  type="text/javascript">
+			    	 /**
+			    	 *set the status and background element color when the page is load**/
+			    	 window.onload = function(){
+           			  var containers = document.getElementsByClassName("truck_container");
+		               
+		               for(var i=0; i<containers.length;++i) {	
+		               		var element = containers[i].children[1]
+			                var string_split = element.innerText.split(':')
+			                var pre = string_split[0]
+			                var temp_measured = parseInt(string_split[1].slice(0, -2))           			  	
+				            updateStatus(containers[i], temp_measured)
+			            }
+			        }
+
+			    	var temp_add = 0.2
+
+			    	/** 
+			    	*Simulates the truck opening adding temperature 
+			    	**/
+			    	function openTruck() {	
+
+			    		var containers = document.getElementsByClassName("truck_container");
+
+			    		for(var i=0; i<containers.length;++i) {
+
+				    		var element = containers[i].children[1]
+			                var string_split = element.innerText.split(':')
+			                var pre = string_split[0]
+			                var temp_measured = parseInt(string_split[1].slice(0, -2))
+		                	
+		                	temp_measured = temp_measured + temp_add
+		                	element.innerText = pre + ': ' + temp_measured + ' oC'
+
+		                	updateStatus(containers[i], temp_measured)	
+
+				            
+				        }
+		                temp_add += 0.2
+           			 }
+
+           			/** 
+           			*Update the container status and the background color of the element
+           			*based in the measured temperature and the beers' temperature range
+           			*@param(Object) receive an object container 
+           			**/
+			        function updateStatus (container, temp_measured){
+			        		var temp_max = container.children[4]
+			                var string_split = temp_max.innerText.split(':')
+			                var pre = string_split[0]
+			                var temp_max = parseInt(string_split[1].slice(0, -2))
+
+			                var temp_min = container.children[3]
+			                var string_split = temp_min.innerText.split(':')
+			                var pre = string_split[0]
+			                var temp_min = parseInt(string_split[1].slice(0, -2))
+
+		                	var beer_status = container.children[2]
+		                	var actual_status = ""		 
+
+		                	var difference = temp_max - temp_min;          	
+
+			                if(temp_measured < (temp_min + difference * 0.60)){
+			           			actual_status = ' Stable'
+			           			beer_status.style.backgroundColor = '#99ff99'
+				            }else if (temp_measured < (temp_min + difference * 0.80)){
+				            	actual_status = 'Alert'
+				            	beer_status.style.backgroundColor = '#ffff66'
+				            }else{
+				            	actual_status = 'Danger'
+				            	beer_status.style.backgroundColor = '#ff9999'
+				            }
+
+				            beer_status.innerText = 'Status: '+ actual_status
+			        }
+            	</script>
+
+			</div>	    	
 	    </div>
-	
-		
 	</body>
 </html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="utf-8"/>
+			<title>Containers</title>
+
+			<!-- JQuery -->
+			<script src="js/jquery-2.2.1.js"></script>
+
+			<!-- bootstrap -->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		
+			<!-- incluindo css -->
+			<link href="css/style.css" rel="stylesheet">
+
+		</head>
+	<body>
+		<div class="container">
+	    	<div class="row">
+				<h1 class="text_center">New Container</h1>
+
+					    <div>
+					    	<% for(var i = 0; i < beers.length; i++) { %>    			
+			    			<p>
+			    				<%= beers[i].beer_name %> Container
+			    			</p>
+			    			<p>
+			    				Minimum Temperature: <%= beers[i].temp_min %><sup>o</sup>C
+			    			</p>
+			    			<p>
+			    				Maximum Temperature: <%= beers[i].temp_max %><sup>o</sup>C
+			    			</p>
+			    			
+			    		<button onclick="saveContainer(<%= beers[i].id_container %>)"> Load Container</button>
+			    	
+			    <% } %>
+
+
+            <script  type="text/javascript">
+                function saveContainer(element){
+                	document.write(element);
+                }
+
+            </script>          
+
+			    
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,6 +1,14 @@
 body{
 	background-image: url('../images/beer.jpg');
+	background-repeat: no-repeat;
 	background-size: cover;
+}
+
+h1{
+	background-image: url('../images/ribbon.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	color: #FFD700;
 }
 
 h3{
@@ -47,6 +55,7 @@ table {
 
 p{
 	font-size: 18px;
+	margin-left: 10px;
 }
 
 div.form_content{
@@ -67,6 +76,27 @@ div.container{
 
 p.db_info{
 	font-size: 14px
+}
+
+.column_left {
+  float: left;
+  width: 70%;
+  margin-left: 20px
+}
+
+.column_right {
+  float: left;
+  width: 20%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.beer_status{
+	margin-right: 10px;
 }
 
 .action_buttons{
@@ -104,52 +134,12 @@ p.db_info{
 
 .beer_title{
 	font-size: 20px;
+	text-decoration-color: white;
 	text-align: center;
 	margin-top: 10px;
 	margin-bottom: 10px;
+	background-image: url('../images/ribbon_beer_title.png');
+	background-size: cover;
+	background-position: center;
+	opacity: 1; 
 }
-
-/* Dropdown Button */
-.dropbtn {
-  background-color: #3498DB;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
-
-/* Dropdown button on hover & focus */
-.dropbtn:hover, .dropbtn:focus {
-  background-color: #2980B9;
-}
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd}
-
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {display:block;}
