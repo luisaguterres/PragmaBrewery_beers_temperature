@@ -19,7 +19,7 @@ So this application shows the containers measured temperature and inform if that
 
 ### Generating the database
 
-The script to generate and populate the application database is at dbcreate.sql file.
+The script to generate and populate the application database is at **dbcreate.sql** file.
 
 ### Run the application
 
@@ -27,6 +27,7 @@ The script to generate and populate the application database is at dbcreate.sql 
 
 ## Improvements
 
--- Develop a interface to insert new containers.
--- Develop a interface to insert new beers.
--- Insert a button to remove the containers that were delivered.
+- Develop a interface to insert new containers.
+- Develop a interface to insert new beers.
+- Insert a button to remove the containers that were delivered.
+- Auto generate the application documentation.
