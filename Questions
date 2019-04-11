@@ -1,0 +1,11 @@
+----- Questions -----
+
+* There is a maximum, minimum or a fixed number os containers per truck? If yes, how many?
+
+* There is a route to the beers delivery? More them a beer can be deliveried at the same place?
+
+* The system should suggest better deliveries scheduales based on the beers temperature?
+
+* The containers of the truck have identification? Like numbers.
+
+* The containers are able to lower or reestablish the temperature after a certain amount of time closed?
