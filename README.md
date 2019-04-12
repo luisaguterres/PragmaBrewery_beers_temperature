@@ -25,6 +25,10 @@ The script to generate and populate the application database is at **dbcreate.sq
 
 ``` node app.js ```
 
+### Run the Test
+The test are in the folder **test**. 
+``` mocha test/<file_name>```
+
 ## Improvements
 
 - Develop a interface to insert new containers.
